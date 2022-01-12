@@ -23,10 +23,10 @@ const popularTagsModule = {
   },
   actions: {
     [actionTypes.getPopularTags]({ commit }) {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         commit(mutationTypes.getPopularTagsStart);
         popularTagsApi.getPopularTags()
-          .then((tags) => {
+          .then(tags => {
             commit(mutationTypes.getPopularTagsSuccess, tags);
             resolve(tags);
           })
